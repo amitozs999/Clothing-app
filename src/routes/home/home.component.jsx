@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-import CategoryList from '../../components/category-list/category-list.component'; 
+import Directory from '../../components/directory/directory.component';
 
 //import CategoryList from './components/category-list/category-list.component'; app.js  
 //.. ek level piche wale folder pe leke jata he
@@ -38,7 +38,7 @@ const categoriesobjlist = [
 
      return (
         <div>
-        <CategoryList categoriesListPr={categoriesobjlist} />
+        <Directory  categories={categoriesobjlist} />
         <Outlet />
       </div>
       
