@@ -9,7 +9,14 @@ import { CartContext } from '../../contexts/cart.context';
 import CartIcon from '../../components/cart-icon/cart-icon.component';
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
 
-import './navigation.styles.scss';
+//import './navigation.styles.scss';
+
+import {
+  NavigationContainer,
+  NavLinks,
+  NavLink,
+  LogoContainer,
+} from './navigation.styles';
 
 const Navigation = () => {
   
@@ -22,17 +29,28 @@ const Navigation = () => {
   return (
     <Fragment>
 
+<NavigationContainer>        {/* <div className='navigation'> */}
 
-      <div className='navigation'>
-        <Link className='logo-container' to='/'>
+        <LogoContainer to='/'>
           <CrwnLogo className='logo' />
-        </Link>
+        </LogoContainer>
+
+        {/* <Link className='logo-container' to='/'>
+          <CrwnLogo className='logo' />
+        </Link>*/}
 
 
-        <div className='nav-links-container'>
+
+        <NavLinks>
+          <NavLink to='/shop'>
+            SHOP
+          </NavLink>
+
+
+        {/* <div className='nav-links-container'>
           <Link className='nav-link' to='/shop'>
             SHOP
-          </Link>
+          </Link>  */}
 
           {currentUser ? (
             <span className='nav-link' onClick={signOutUser}>
@@ -46,10 +64,10 @@ const Navigation = () => {
           )}
 
         <CartIcon />
-        </div>
+        </NavLinks>
         {isCartOpen && <CartDropdown />}   
           {/* //cart open hoga toh return dropdown and show it */}
-      </div>
+          </NavigationContainer>
       <Outlet />
     </Fragment>
   );
