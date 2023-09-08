@@ -24,7 +24,7 @@ const middleWares = [loggerMiddleware];
 const persistConfig = {
   key: 'root',
   storage,
-  blacklist: ['user'],
+  blacklist: ['user'],     //by default persist all reducer blacklist wale ko chorke
 };
 
 
